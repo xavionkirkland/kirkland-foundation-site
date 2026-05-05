@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Kirkland Foundation</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+background: #0a0a0a;
+color: #f5f5f5;
+line-height: 1.6;
+}
+
+header {
+background: rgba(0, 0, 0, 0.92);
+border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+padding: 20px 36px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+position: sticky;
+top: 0;
+z-index: 1000;
+}
+
+.logo {
+color: #d4af37;
+font-size: 24px;
+font-weight: 700;
+letter-spacing: 1px;
+text-transform: uppercase;
+}
+
+nav a {
+color: #f5f5f5;
+text-decoration: none;
+margin-left: 24px;
+font-size: 15px;
+letter-spacing: 0.5px;
+transition: 0.3s;
+}
+
+nav a:hover {
+color: #d4af37;
+}
+
+.hero {
+min-height: 90vh;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding: 100px 20px;
+background:
+linear-gradient(rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.82)),
+url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.hero-content {
+max-width: 900px;
+}
+
+.hero h1 {
+font-size: 56px;
+line-height: 1.1;
+margin-bottom: 24px;
+color: #ffffff;
+letter-spacing: 0.5px;
+}
+
+.hero p {
+font-size: 21px;
+color: #d6d6d6;
+max-width: 760px;
+margin: 0 auto 34px;
+}
+
+.hero-buttons a {
+display: inline-block;
+margin: 10px;
+padding: 14px 30px;
+text-decoration: none;
+border-radius: 4px;
+font-weight: bold;
+letter-spacing: 0.5px;
+transition: 0.3s;
+}
+
+.btn-gold {
+background: #d4af37;
+color: #111;
+}
+
+.btn-gold:hover {
+background: #ebc85a;
+}
+
+.btn-outline {
+border: 1px solid #d4af37;
+color: #d4af37;
+background: transparent;
+}
+
+.btn-outline:hover {
+background: #d4af37;
+color: #111;
+}
+
+section {
+max-width: 1180px;
+margin: auto;
+padding: 90px 22px;
+}
+
+.section-title {
+text-align: center;
+font-size: 38px;
+margin-bottom: 18px;
+color: #ffffff;
+letter-spacing: 0.5px;
+}
+
+.section-subtitle {
+text-align: center;
+max-width: 760px;
+margin: 0 auto 50px;
+color: #bfbfbf;
+font-size: 18px;
+}
+
+.identity-box,
+.founder-box,
+.access-box {
+background: #111111;
+border: 1px solid rgba(212, 175, 55, 0.18);
+border-radius: 10px;
+padding: 36px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.what-we-are-list {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 16px;
+margin-bottom: 30px;
+}
+
+.pill {
+border: 1px solid rgba(212, 175, 55, 0.35);
+color: #d4af37;
+padding: 12px 20px;
+border-radius: 30px;
+font-weight: bold;
+background: rgba(212, 175, 55, 0.05);
+}
+
+.identity-box p,
+.founder-box p,
+.access-box p {
+text-align: center;
+font-size: 18px;
+color: #d0d0d0;
+max-width: 850px;
+margin: auto;
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+gap: 24px;
+margin-top: 30px;
+}
+
+.card {
+background: #111111;
+border: 1px solid rgba(212, 175, 55, 0.16);
+border-radius: 10px;
+padding: 28px;
+transition: 0.3s;
+box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+}
+
+.card:hover {
+transform: translateY(-4px);
+border-color: rgba(212, 175, 55, 0.4);
+}
+
+.card h3 {
+color: #d4af37;
+margin-bottom: 14px;
+font-size: 22px;
+}
+
+.card ul {
+list-style: none;
+padding-left: 0;
+}
+
+.card ul li {
+margin-bottom: 10px;
+color: #dadada;
+}
+
+.phase-list {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 24px;
+margin-top: 32px;
+}
+
+.phase {
+background: #111111;
+border-left: 4px solid #d4af37;
+padding: 28px;
+border-radius: 8px;
+box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+}
+
+.phase h3 {
+color: #ffffff;
+margin-bottom: 10px;
+font-size: 22px;
+}
+
+.phase p {
+color: #d0d0d0;
+}
+
+.access-options {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 18px;
+margin-top: 28px;
+}
+
+.access-option {
+padding: 14px 22px;
+border: 1px solid rgba(212, 175, 55, 0.35);
+color: #d4af37;
+border-radius: 6px;
+background: rgba(212, 175, 55, 0.04);
+font-weight: bold;
+}
+
+.founder-name {
+text-align: center;
+color: #d4af37;
+font-size: 28px;
+margin-bottom: 6px;
+font-weight: bold;
+}
+
+.founder-title {
+text-align: center;
+color: #ffffff;
+margin-bottom: 22px;
+font-size: 16px;
+letter-spacing: 1px;
+text-transform: uppercase;
+}
+
+.cta-section {
+text-align: center;
+padding-top: 40px;
+}
+
+.cta-section a {
+display: inline-block;
+margin: 10px;
+padding: 14px 28px;
+text-decoration: none;
+border-radius: 4px;
+font-weight: bold;
+}
+
+footer {
+text-align: center;
+padding: 28px 20px;
+color: #9f9f9f;
+border-top: 1px solid rgba(212, 175, 55, 0.15);
+background: #080808;
+font-size: 14px;
+letter-spacing: 0.4px;
+}
+
+@media (max-width: 768px) {
+.hero h1 {
+font-size: 38px;
+}
+
+.hero p {
+font-size: 18px;
+}
+
+header {
+flex-direction: column;
+gap: 14px;
+}
+
+nav {
+text-align: center;
+}
+
+nav a {
+margin: 0 10px;
+display: inline-block;
+}
+}
+.access-form-section {
+max-width: 720px;
+margin: 80px auto;
+padding: 40px;
+border: 1px solid rgba(212, 175, 55, 0.45);
+background: rgba(10, 10, 10, 0.75);
+border-radius: 18px;
+text-align: center;
+}
+
+.access-form {
+display: flex;
+flex-direction: column;
+gap: 14px;
+margin-top: 25px;
+}
+
+.access-form input,
+.access-form select,
+.access-form textarea {
+width: 100%;
+padding: 14px 16px;
+border: 1px solid rgba(212, 175, 55, 0.45);
+border-radius: 10px;
+background: #111;
+color: #fff;
+font-size: 15px;
+}
+
+.access-form textarea {
+min-height: 120px;
+resize: vertical;
+}
+
+.access-form button {
+padding: 15px;
+border: none;
+border-radius: 10px;
+background: #d4af37;
+color: #000;
+font-weight: 700;
+cursor: pointer;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+.access-form button:hover {
+background: #f5d76e;
+}
+
+#formStatus {
+margin-top: 16px;
+color: #d4af37;
+font-weight: 600;
+}is  v
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">The Kirkland Foundation</div>
+<nav>
+<a href="#identity">Identity</a>
+<a href="#systems">Systems</a>
+<a href="#phases">Phases</a>
+<a href="#access">Access</a>
+<a href="#founder">Founder</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h1>The Next Financial Order Is Being Built.</h1>
+<p>The Kirkland Foundation is a private system designed to acquire, protect, and multiply assets at scale.</p>
+<div class="hero-buttons">
+<a href="#identity" class="btn-gold">Enter</a>
+<a href="#access" class="btn-outline">Request Access</a>
+</div>
+</div>
+</section>
+
+<section id="identity">
+<h2 class="section-title">What We Are</h2>
+<p class="section-subtitle">A controlled structure built for long-term positioning, not public attention.</p>
+<div class="identity-box">
+<div class="what-we-are-list">
+<div class="pill">Not a bank</div>
+<div class="pill">Not a fund</div>
+<div class="pill">Not public</div>
+</div>
+<p>We are a private financial structure focused on asset control, capital growth, and generational positioning.</p>
+</div>
+</section>
+
+<section id="systems">
+<h2 class="section-title">Systems</h2>
+<p class="section-subtitle">Built in layers. Understood in phases. Executed with intention.</p>
+<div class="grid">
+<div class="card">
+<h3>Capital Growth</h3>
+<ul>
+<li>Trading</li>
+<li>Forex</li>
+<li>Indices</li>
+<li>Metals</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Asset Acquisition</h3>
+<ul>
+<li>Real estate</li>
+<li>Vehicles</li>
+<li>Businesses</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Credit Infrastructure</h3>
+<ul>
+<li>Business credit</li>
+<li>No PG strategy</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Private Banking Vision</h3>
+<ul>
+<li>Neighborhood Banking concept</li>
+<li>Private financial ecosystem</li>
+<li>Community-aligned control</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="phases">
+<h2 class="section-title">Phases of Expansion</h2>
+<p class="section-subtitle">Not theory. A staged model for controlled growth.</p>
+<div class="phase-list">
+<div class="phase">
+<h3>Phase 1: Foundation</h3>
+<p>Credit, income, and structure.</p>
+</div>
+
+<div class="phase">
+<h3>Phase 2: Asset Control</h3>
+<p>Vehicles, real estate, and scale.</p>
+</div>
+
+<div class="phase">
+<h3>Phase 3: Institutional Expansion</h3>
+<p>Banking model, communities, and long-term system growth.</p>
+</div>
+</div>
+</section>
+
+<section id="access">
+<h2 class="section-title">Access Is Limited</h2>
+<p class="section-subtitle">This is not a public offering. Entry points are selective by design.</p>
+<div class="access-box">
+<p>Access is structured to filter alignment, not attract noise.</p>
+<div class="access-options">
+<div class="access-option">Request Access</div>
+<div class="access-option">Partner Inquiry</div>
+<div class="access-option">Investor Interest</div>
+</div>
+
+<div class="cta-section">
+<a href="mailto:info@thekirklandfoundation.com?subject=Request%20Access" class="btn-gold">Email Inquiry</a>
+<a href="tel:2542442990" class="btn-outline">Call Direct</a>
+</div>
+</div>
+</section>
+
+<section id="founder">
+<h2 class="section-title">Founder</h2>
+<div class="founder-box">
+<div class="founder-name">Xavion Kirkland</div>
+<div class="founder-title">Founder</div>
+<p>Building a private financial institution designed for scale, control, and generational impact.</p>
+</div>
+</section>
+<section id="access-form" class="access-form-section">
+
+<h2 class="section-title">Request Access</h2>
+
+<p class="section-subtitle">
+Submit your inquiry for private access, partnership interest, or investor consideration.
+</p>
+
+<form id="accessForm" class="access-form">
+
+<input type="text" id="name" placeholder="Full Name" required>
+
+<input type="email" id="email" placeholder="Email Address" required>
+
+<select id="inquiry" required>
+<option value="">Select Inquiry Type</option>
+<option value="Request Access">Request Access</option>
+<option value="Partner Inquiry">Partner Inquiry</option>
+<option value="Investor Interest">Investor Interest</option>
+</select>
+
+<textarea id="message" placeholder="Briefly state your purpose..." required></textarea>
+
+<button type="submit">Submit Inquiry</button>
+
+</form>
+
+<p id="formStatus"></p>
+
+</section>
+
+<footer>
+© 2026 The Kirkland Foundation. Private structure. Limited access.
+
+</footer>
+
+
+</body>
+</html>
